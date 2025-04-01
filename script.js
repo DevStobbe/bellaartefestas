@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
+  function initLazyLoad() {
+    const lazyImages = document.querySelectorAll('.galeria-item img');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src; // Substitui o src pelo data-src
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '100px', // Carrega a imagem um pouco antes de entrar na tela
+      threshold: 0.1
+    });
+
+    lazyImages.forEach(img => {
+      observer.observe(img);
+    });
+  }
+
+  initLazyLoad();
+
   // 1. Efeito de Carregamento
   const loadingScreen = document.createElement('div');
   loadingScreen.className = 'loading-screen';
@@ -209,6 +232,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === 'block') {
+        if (e.key === 'ArrowLeft') {
+          navigate('prev');
+        } else if (e.key === 'ArrowRight') {
+          navigate('next');
+        } else if (e.key === 'Escape') {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
+    
     
     // Navegação por teclado
     document.addEventListener('keydown', (e) => {
