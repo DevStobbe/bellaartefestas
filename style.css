@@ -473,6 +473,7 @@ section ul li::before {
 }
 
 /* Modal */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -498,6 +499,36 @@ section ul li::before {
   box-shadow: 0 0 20px rgba(233, 30, 99, 0.5);
 }
 
+/* Botões de Navegação */
+.modal-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1010;
+}
+
+.modal-btn:hover {
+  background-color: rgba(201, 51, 201, 0.6);
+ 
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Botão de Fechar */
 .fechar-modal {
   position: fixed;
   top: 20px;
@@ -506,103 +537,291 @@ section ul li::before {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 1020;
 }
 
 .fechar-modal:hover {
   color: #f103de;
+  transform: scale(1.1);
 }
 
-/* Footer */
-/* Footer Modernizado */
+.fechar-modal:active {
+  transform: scale(0.95);
+}
+
+
+/* Ultra Premium Footer - Masterpiece Edition */
 footer {
-  background: linear-gradient(135deg, #333 0%, #222 100%);
+  --primary-accent: #ff4d4d;
+  --secondary-accent: #f9cb28;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  
+  background: linear-gradient(152deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   color: #fff;
-  padding: 40px 20px;
+  padding: 80px 20px 60px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
   position: relative;
   overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  isolation: isolate;
 }
 
+/* Efeito de Partículas Dinâmicas */
 footer::before {
   content: '';
   position: absolute;
-  top: -10px;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(var(--primary-accent), 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(var(--secondary-accent), 0.05) 0%, transparent 50%);
+  z-index: -1;
+  animation: particleMove 20s infinite alternate;
+}
+
+@keyframes particleMove {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-50px) translateX(20px); }
+}
+
+/* Barra Superior Cinética */
+footer::after {
+  content: '';
+  position: absolute;
+  top: -25px;
   left: 0;
   right: 0;
-  height: 20px;
-  background: linear-gradient(135deg, #e91e63 0%, #ff5722 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+  height: 50px;
+  background: linear-gradient(90deg, 
+    var(--primary-accent) 0%, 
+    var(--secondary-accent) 50%, 
+    var(--primary-accent) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  background-size: 300% 100%;
+  animation: gradientFlow 6s linear infinite;
+  filter: drop-shadow(0 5px 15px rgba(255, 77, 77, 0.3));
 }
 
-footer p {
-  margin: 10px 0;
-  font-size: 1.1rem;
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
-.social-icons {
+/* Container de Conteúdo */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Efeito de Neon Pulsante */
+.neon-text {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  animation: neonPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  from { text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+  to { text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 77, 77, 0.3); }
+}
+
+/* Sistema de Ícones Holográficos */
+.social-hologram {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 30px 0;
+  margin: 50px 0;
+  perspective: 1000px;
 }
 
-.social-icons a {
+.hologram-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
   position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: none;           /* Remove bordas se houver */
+  text-decoration: none;  /* Remove underline, caso seja um link */
 }
 
-.social-icons a::before {
+
+.hologram-button::before {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  inset: -5px;
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 60%);
+  transform: translateY(100%) rotate(15deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
 }
 
-.social-icons a:hover::before {
-  transform: translateY(0);
+.hologram-button::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
-/* Estilo individual para cada ícone */
-.social-icons a:nth-child(1) { /* WhatsApp */
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-}
-
-.social-icons a:nth-child(2) { /* Instagram */
-  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-}
-
-.social-icons a:nth-child(3) { /* Facebook */
-  background: linear-gradient(135deg, #1877f2 0%, #0d47a1 100%);
-}
-
-.social-icons a i {
-  font-size: 1.8rem;
+.hologram-icon {
+  font-size: 2.5rem;
   color: white;
   position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
-.social-icons a:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+.hologram-button:hover {
+  transform: translateY(-15px) rotateX(15deg) scale(1.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.social-icons a:hover i {
-  transform: scale(1.2);
+.hologram-button:hover::before {
+  transform: translateY(-50%) rotate(-15deg);
+}
+
+.hologram-button:hover .hologram-icon {
+  transform: scale(1.2) translateZ(20px);
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+/* Cores Específicas com Efeito de Plasma */
+.hologram-button.whatsapp {
+  background: linear-gradient(135deg, 
+    rgba(37, 211, 102, 0.8) 0%, 
+    rgba(18, 140, 126, 0.9) 100%);
+}
+
+.hologram-button.instagram {
+  background: linear-gradient(135deg, 
+    rgba(131, 58, 180, 0.8) 0%, 
+    rgba(253, 29, 29, 0.8) 50%, 
+    rgba(252, 176, 69, 0.8) 100%);
+}
+
+.hologram-button.facebook {
+  background: linear-gradient(135deg, 
+    rgba(24, 119, 242, 0.8) 0%, 
+    rgba(13, 71, 161, 0.9) 100%);
+}
+
+/* Efeito de Onda Dinâmica */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.03)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  animation: waveMove 15s linear infinite;
+  opacity: 0.7;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 20s;
+  animation-direction: reverse;
+  opacity: 0.5;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Texto Flutuante */
+.floating-text {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsividade Avançada */
+@media (max-width: 992px) {
+  .social-hologram {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .hologram-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+  }
+  
+  .hologram-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    padding: 60px 20px 40px;
+  }
+  
+  .hologram-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+}
+
+/* Efeito de onda no rodapé */
+.wave-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="rgba(255,255,255,0.03)" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="rgba(255,255,255,0.03)" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="rgba(255,255,255,0.03)"/></svg>');
+  background-size: cover;
+  opacity: 0.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+  }
+  
+  .social-icons a i {
+    font-size: 1.8rem;
+  }
 }
 
 /* Efeito de pulse nos ícones */
@@ -879,5 +1098,16 @@ feedbacks {
   .feedback-author::before {
     width: 35px;
     height: 35px;
+  }
+}
+
+@keyframes balloon-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
   }
 }

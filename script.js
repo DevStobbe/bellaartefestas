@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const color = colors[Math.floor(Math.random() * colors.length)];
           const duration = Math.random() * 3 + 3;
           
-          balloon.style.cssText = `
+          balloon.style.cssText = ` 
             position: absolute;
             width: ${size}px;
             height: ${size * 1.2}px;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
           `;
           
           const string = document.createElement('div');
-          string.style.cssText = `
+          string.style.cssText = ` 
             position: absolute;
             bottom: -15px;
             left: 50%;
@@ -168,12 +168,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 4. Modal para Imagens Ampliadas (COM BOTÕES DE NAVEGAÇÃO)
   function initModal() {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-imagem');
     const closeBtn = document.querySelector('.fechar-modal');
-    const galleryImages = document.querySelectorAll('.galeria-item img');
     const prevBtn = document.createElement('button');
     const nextBtn = document.createElement('button');
     
@@ -187,11 +185,20 @@ document.addEventListener('DOMContentLoaded', function() {
     modal.appendChild(nextBtn);
     
     let currentImageIndex = 0;
-    const imagesArray = Array.from(galleryImages);
+    let visibleImages = [];
     
-    galleryImages.forEach((img, index) => {
+    // Atualiza o array com as imagens visíveis (considerando o filtro ativo)
+    function updateVisibleImages() {
+      visibleImages = Array.from(document.querySelectorAll('.galeria-item img')).filter(img => {
+        return window.getComputedStyle(img.closest('.galeria-item')).display !== 'none';
+      });
+    }
+    
+    // Ao clicar em uma imagem, atualiza a lista de imagens visíveis e abre o modal
+    document.querySelectorAll('.galeria-item img').forEach(img => {
       img.addEventListener('click', function() {
-        currentImageIndex = index;
+        updateVisibleImages();
+        currentImageIndex = visibleImages.findIndex(vi => vi === this);
         openModal(this.src);
       });
     });
@@ -203,12 +210,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function navigate(direction) {
+      updateVisibleImages(); // Atualiza a lista sempre que navega
+      if (!visibleImages.length) return;
       if (direction === 'prev') {
-        currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
+        currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
       } else {
-        currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
+        currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
       }
-      modalImg.src = imagesArray[currentImageIndex].src;
+      modalImg.src = visibleImages[currentImageIndex].src;
     }
     
     prevBtn.addEventListener('click', (e) => {
@@ -232,22 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
       }
     });
-
-    document.addEventListener('keydown', (e) => {
-      if (modal.style.display === 'block') {
-        if (e.key === 'ArrowLeft') {
-          navigate('prev');
-        } else if (e.key === 'ArrowRight') {
-          navigate('next');
-        } else if (e.key === 'Escape') {
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      }
-    });
     
-    
-    // Navegação por teclado
     document.addEventListener('keydown', (e) => {
       if (modal.style.display === 'block') {
         if (e.key === 'ArrowLeft') {
@@ -261,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-
+  
   // 5. Animar Seções
   function animateSections() {
     const sections = document.querySelectorAll('section');
@@ -274,125 +268,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 6. Estilos Dinâmicos (incluindo estilos para os botões do modal)
-const dynamicStyles = document.createElement('style');
-dynamicStyles.textContent = `
-  .loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-  }
-  
-  .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(233, 30, 99, 0.2);
-    border-radius: 50%;
-    border-top-color: #e91e63;
-    animation: spin 1s linear infinite;
-    margin-bottom: 20px;
-  }
-  
-  .loading-screen p {
-    font-family: 'Pacifico', cursive;
-    color: #e91e63;
-    font-size: 1.5rem;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
-  /* Animação dos balões */
-  @keyframes balloon-float {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh) rotate(10deg);
-      opacity: 0.7;
-    }
-  }
-  
-  .balloon {
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  }
-  
-  .balloon::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 12px;
-    height: 15px;
-    background: inherit;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-    transform: translateX(-50%);
-    opacity: 0.8;
-  }
-  
-  /* Efeitos de navegação */
-  nav a, .filtro-btn {
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-  
-  nav a:hover, .filtro-btn:hover {
-    transform: translateY(-2px);
-  }
-  
-  nav a:active, .filtro-btn:active {
-    transform: translateY(1px);
-  }
-  
-  /* Seções */
-  section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  /* Botões do Modal */
-  .modal-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1001;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
-  }
-  
-  .prev-btn {
-    left: 20px;
-  }
-  
-  .next-btn {
-    right: 20px;
-  }
-`;
-document.head.appendChild(dynamicStyles);
