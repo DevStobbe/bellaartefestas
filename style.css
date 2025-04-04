@@ -153,12 +153,20 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* Garante que os itens fiquem centralizados */
   gap: 1rem;
   margin-top: 2rem;
   width: 100%;
   max-width: 800px;
+  margin-left: auto;
+  /* Garante que o conteúdo fique centralizado */
+  margin-right: auto;
+  /* Garante que o conteúdo fique centralizado */
+  padding: 0 1rem;
+  /* Adiciona espaçamento nas laterais para que não fiquem muito colados na tela */
 }
 
+/* Estilo para os links da navegação */
 header nav a {
   color: #fff;
   text-decoration: none;
@@ -188,8 +196,9 @@ header nav a::before {
 }
 
 header nav a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.35);
+
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(233, 30, 99, 0.4);
 }
 
 header nav a:hover::before {
