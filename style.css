@@ -586,6 +586,24 @@ section ul li::before {
   transform: scale(0.95);
 }
 
+/* Estilo para os links no rodapé */
+.footer-links {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #e91e63;
+}
+
 
 /* Ultra Premium Footer  */
 footer {
@@ -604,7 +622,6 @@ footer {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   isolation: isolate;
-  position: relative;
   min-height: 200px;
 
 }
