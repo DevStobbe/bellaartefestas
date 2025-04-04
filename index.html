@@ -1,132 +1,953 @@
-/* Seções Modernizadas */
-section {
-  padding: 60px 20px;
-  margin: 30px auto;
-  max-width: 1200px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-/* Efeito de borda decorativa */
-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #e91e63, #ff9800, #e91e63);
-  background-size: 200% 200%;
-  animation: gradient 3s ease infinite;
-}
+<head>
+  <!-- Configuração básica -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Bella Arte">
+  <meta name="robots" content="index, follow">
 
-/* Efeito hover sutil */
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 1); /* Torna o fundo mais claro no hover */
-}
+  <!-- SEO e Compartilhamento -->
+  <meta name="description"
+    content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba, Piraquara, Pinhais e região. Encontre a decoração perfeita para o seu evento!">
+  <meta name="keywords"
+    content="decoração de festas, festas infantis, casamento, aniversário, eventos, organização de festas">
 
-/* Títulos das seções */
-section h2 {
-  color: #e91e63;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-  font-family: 'Pacifico', cursive;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15); /* Sombras mais suaves para um efeito sutil */
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Efeito de transição suave */
-}
+  <!-- Open Graph (Para Facebook, WhatsApp, etc.) -->
+  <meta property="og:title" content="Bella Arte - Decoração de Festas">
+  <meta property="og:description"
+    content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba e região.">
+  <meta property="og:image" content="URL_DA_LOGO">
+  <meta property="og:url" content="https://SEU_SITE.com">
+  <meta property="og:type" content="website">
 
-section h2:hover {
-  color: #ff9800; /* Mudança de cor no hover */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Mais intensidade no hover */
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bella Arte - Decoração de Festas">
+  <meta name="twitter:description" content="Transforme seu evento com a melhor decoração de Curitiba e região!">
+  <meta name="twitter:image" content="URL_DA_LOGO">
 
-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50%;
-  height: 3px;
-  background: linear-gradient(90deg, #e91e63, transparent);
-  border-radius: 3px;
-  transition: width 0.3s ease; /* Suaviza o crescimento da linha */
-}
+  <!-- Ícones -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/logo.png" type="image/png">
 
-section h2:hover::after {
-  width: 100%; /* A linha cresce quando o título é hover */
-}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap"
+    rel="stylesheet">
 
-/* Conteúdo das seções */
-section p,
-section ul {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 20px;
-  transition: color 0.3s ease;
-}
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-/* Listas */
-section ul {
-  padding-left: 20px;
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK6BLVBCHT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BK6BLVBCHT');
+  </script>
 
-section ul li {
-  margin-bottom: 15px;
-  position: relative;
-  font-size: 1.1rem;
-}
+  <title>Bella Arte - Decoração de Festas</title>
+</head>
 
-section ul li::before {
-  content: '🎀';
-  position: absolute;
-  left: -30px;
-  top: 0;
-  font-size: 1.4rem; /* Tamanho do ícone ajustado */
-  color: #e91e63; /* Cor do ícone */
-}
 
-/* Efeito de gradiente animado */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
 
-  50% {
-    background-position: 100% 50%;
-  }
+<body>
+  <header>
+    <h1>Bem-vindo a Bella Arte!</h1>
+    <img src="./images/logo.png" alt="logo da empresa Bella arte decorações de festas" id="logo">
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+  </header>
 
-  100% {
-    background-position: 0% 50%;
-  }
-}
+  <section id="inicio">
+    <h2>Transformamos sonhos em realidade!</h2>
+    <p>Adoro o que faço! Criar decorações de festas é a minha paixão, e ver a felicidade estampada no rosto dos meus
+      clientes é a minha maior motivação.</p>
+    <p>Me dedico a proporcionar um atendimento acolhedor e atencioso, entendendo cada detalhe para tornar a sua festa
+      única e inesquecível.</p>
+    <p>Conte comigo para tornar seu evento especial!</p>
+  </section>
 
-/* Responsividade */
-@media (max-width: 768px) {
-  section {
-    padding: 40px 15px;
-    margin: 20px 10px;
-    border-radius: 12px;
-  }
+  <!-- Ultimos trabalhos realizados -->
 
-  section h2 {
-    font-size: 2rem;
-  }
+  <section id="ultimos-servicos" class="servicos-section">
+    <h2>Últimos Trabalhos Realizados</h2>
+    <div class="galeria-servicos">
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img1.jpeg" alt="Decoração de Aniversário Tema Enrolados">
+        <p>Aniversário Tema Enrolados</p>
+      </div>
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img2.jpeg" alt="Decoração de Aniversário Tema Pool Party">
+        <p> Aniversário Tema Pool Party</p>
+      </div>
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img3.jpeg" alt="Decoração de chá revelação">
+        <p>Aniversário Tema Bob Esponja</p>
+      </div>
 
-  section ul li::before {
-    font-size: 1.2rem; /* Ajuste para ícones menores em telas pequenas */
-    left: -20px;
-  }
-}
+      <!-- Adicione mais serviços aqui -->
+    </div>
+  </section>
+
+
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+
+    <div class="servico">
+      <h3>Festas</h3>
+      <p>Na Bella Arte, transformamos seus eventos em momentos mágicos e inesquecíveis! Oferecemos serviços completos
+        para deixar sua festa ainda mais especial, incluindo:</p>
+      <ul>
+        <li>
+          <strong>Decorações de Festas:</strong> Criamos ambientes encantadores e personalizados, desde festas infantis
+          até eventos adultos. Com temas criativos e atenção aos detalhes, garantimos uma decoração que impressiona e
+          encanta.
+        </li>
+        <li>
+          <strong>Locações de Brinquedos:</strong> Diversão garantida para as crianças! Temos uma variedade de
+          brinquedos seguros e divertidos, como cama elástica, piscina de bolinhas, tobogã e muito mais. Tudo para
+          deixar a festa dos pequenos ainda mais animada.
+        </li>
+        <li>
+          <strong>Kits Pegue e Monte:</strong> Praticidade e estilo para sua festa! Nossos kits incluem tudo o que você
+          precisa para decorar o ambiente, como balões, bandeirinhas, painéis e muito mais. Basta pegar, montar e
+          surpreender seus convidados.
+        </li>
+        <li>
+          <strong>Aluguel de Mesas e Cadeiras:</strong> Conforto e organização para seu evento. Oferecemos mesas e
+          cadeiras de qualidade, ideais para qualquer tipo de festa. Garantimos praticidade na entrega e montagem, para
+          que você possa focar no que realmente importa: aproveitar o seu evento!
+        </li>
+      </ul>
+      <p>Na Bella Arte, cuidamos de cada detalhe para que sua festa seja perfeita. CLique <a
+          href="https://wa.me/+5541988039437" target="_blank" aria-label="WhatsApp">Aqui</a> e deixe a decoração e a
+        diversão por nossa conta!</p>
+    </div>
+
+    <div class="servico">
+      <h3>Personalizados</h3>
+      <p>Acreditamos que os detalhes fazem toda a diferença! Por isso, oferecemos itens personalizados que tornam sua
+        festa única e especial. Confira nossos serviços:</p>
+      <ul>
+        <li>
+          <strong>Topos de Bolo:</strong> Destaque o momento mais doce da festa com nossos topos de bolo personalizados.
+          Criamos peças exclusivas, que combinam perfeitamente com o tema da sua celebração. De personagens infantis a
+          designs elegantes para eventos adultos, temos o topo ideal para o seu bolo.
+        </li>
+        <li>
+          <strong>Caixinhas para Centros de Mesas e lembrancinhas:</strong> Encante seus convidados com caixinhas
+          decorativas para
+          centros de mesa. Elas podem ser usadas para doces, lembrancinhas ou simplesmente como parte da decoração.
+          Personalizamos cada caixinha para combinar com o estilo da sua festa.
+        </li>
+        <li>
+          <strong>Kit só um bolinho:</strong> Bandeirolas decorativas: Dê um toque de alegria e charme ao seu ambiente.
+          Displays elegantes: destaque sua decoração com displays exclusivos de seu tema favorito.
+          Topos de bolo personalizados: Adicione um toque único e criativo ao seu bolo.
+          Painéis temáticos: Crie um cenário encantador para suas fotos e decoração.
+          Perfeito para aniversários, festas infantis, casamentos ou qualquer ocasião especial,
+          o Kit Só um Bolinho é a solução prática e charmosa para quem busca praticidade sem abrir mão da beleza.
+
+        </li>
+      </ul>
+      <p>Na Bella Arte, cada item é criado com carinho e atenção aos detalhes, para que sua festa seja verdadeiramente
+        inesquecível. Acompanhe nossas redes <a
+          href="https://www.instagram.com/bella_arte_3654?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" aria-label="instagram"> sociais</a> e descubra como podemos tornar seu evento ainda mais
+        especial!</p>
+    </div>
+  </section>
+
+  <section id="feedbacks">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="feedback-container">
+      <div class="feedback">
+        <div class="estrelas">
+          ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+        </div>
+        <p class="feedback-text">"A Bella Arte transformou a festa do meu filho em um sonho! Tudo ficou incrível, desde
+          a decoração até os detalhes. Super recomendo!"</p>
+        <p class="feedback-author">- Ana Clara</p>
+      </div>
+      <div class="feedback">
+        <div class="estrelas">
+          ⭐⭐⭐⭐<!-- 4 estrelas -->
+        </div>
+        <p class="feedback-text">"Que trabalho maravilhoso! A festa foi organizada nos mínimos detalhes, tudo aconteceu
+          como num conto de fadas - você tem um dom especial para isso!"</p>
+        <p class="feedback-author">- Carlos Eduardo</p>
+      </div>
+      <div class="feedback">
+        <div class="estrelas">
+          ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+        </div>
+        <p class="feedback-text">"Fiquei encantada com o trabalho da Bella Arte. Eles cuidaram de cada detalhe da festa
+          da minha filha. Foi perfeito!"</p>
+        <p class="feedback-author">- Mariana Souza</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>❤️ Galeria de todo nosso trabalho ❤️</h2>
+
+    <!-- Filtros -->
+    <div class="filtro-container">
+      <button class="filtro-btn active" data-categoria="todos">Todos</button>
+      <button class="filtro-btn" data-categoria="decoracao">Decoração</button>
+      <button class="filtro-btn" data-categoria="pegue-monte">Pegue e Monte</button>
+      <button class="filtro-btn" data-categoria="agendas">Agendas Personalizadas</button>
+      <button class="filtro-btn" data-categoria="algodao-doce">Algodão Doce</button>
+      <button class="filtro-btn" data-categoria="topo-bolo">Topo de Bolo</button>
+      <button class="filtro-btn" data-categoria="Lembrancinhas">Lembrancinhas</button>
+      <button class="filtro-btn" data-categoria="Brinquedos">Brinquedos</button>
+    </div>
+
+    <!-- Galeria -->
+    <div class="galeria-container">
+      <!-- Decoração -->
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img1.webp" alt="Decoração Completa - Fazendinha">
+        <div class="galeria-legenda">Decoração Completa - Fazendinha</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img2.webp" alt="Decoração Completa - Dino Baby">
+        <div class="galeria-legenda">Decoração Completa - Dino Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img3.webp" alt="Decoração completa  - Sonic">
+        <div class="galeria-legenda">Decoração completa - Sonic </div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img4.webp" alt="Decoração Completa - patati patatás">
+        <div class="galeria-legenda">Decoração Completa - patati patatá</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img5.webp" alt="Decoração Completa - Minnie Baby">
+        <div class="galeria-legenda">Decoração Completa - Minnie Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img6.webp" alt="Decoração Completa - Dino Baby">
+        <div class="galeria-legenda">Decoração Completa - Dino Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img7.webp" alt="Decoração Completa - Stitch Confeiteiro">
+        <div class="galeria-legenda">Decoração Completa - Stitch Confeiteiro</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img8.webp" alt="Decoração Completa - 365 Sorrisos">
+        <div class="galeria-legenda">Decoração Completa - 365 Sorrisos</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img9.webp" alt="Decoração Completa - Moranguinho">
+        <div class="galeria-legenda">Decoração Completa - Moranguinho</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img10.webp" alt="Decoração Completa - Chuva de Amor">
+        <div class="galeria-legenda">Decoração Completa - Chuva de Amor</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img11.webp" alt="Decoração Completa - Tinker Bell e Hotwheels">
+        <div class="galeria-legenda">Decoração Completa - Tinker Bell e Hotwheels</div>
+      </div>
+      <div class="galeria-item" data-categoria="decoracao">
+        <img data-src="./images/galeria/decoracoes/img12.webp" alt="Decoração Completa - Minnie Rosa e Futebol">
+        <div class="galeria-legenda">Decoração Completa - Minnie Baby e Futebol</div>
+      </div>
+
+
+      <!-- pegue e monte -->
+
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img1.jpeg" alt="Kit pegue e monte - DIno Baby">
+        <div class="galeria-legenda">Kit Pegue e Monte - DIno Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img2.jpeg" alt="Kit pegue e monte - Casa Mágica da Gaby">
+        <div class="galeria-legenda">Kit Pegue e Monte - Casa Mágica da Gaby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img3.jpeg" alt="Kit pegue e monte - Minions">
+        <div class="galeria-legenda">Kit Pegue e Monte - Minions</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img4.jpeg" alt="Kit pegue e monte - Girafinha Rosa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Girafinha Rosa</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img5.jpeg" alt="Kit pegue e monte - Alice no País das Maravilhas">
+        <div class="galeria-legenda">Kit Pegue e Monte - Alice no País das Maravilhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img6.jpeg" alt="Kit pegue e monte - Monstrons S.A">
+        <div class="galeria-legenda">Kit Pegue e Monte - Monstrons S.A</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img7.jpeg" alt="Kit pegue e monte - Sáfari Menino">
+        <div class="galeria-legenda">Kit Pegue e Monte - Sáfari Menino</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img8.jpeg" alt="Kit pegue e monte - Borboleta Lilás">
+        <div class="galeria-legenda">Kit Pegue e Monte - Borboleta Lilás </div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img9.jpeg" alt="Kit pegue e monte - Arca de Noé">
+        <div class="galeria-legenda">Kit Pegue e Monte - Arca de Noé</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img10.jpeg" alt="Kit pegue e monte - Chá Revelação Boy ou Gilr">
+        <div class="galeria-legenda">Kit Pegue e Monte - Chá Revelação Boy ou Gilr</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img11.jpeg" alt="Kit Pegue e Monte - Stitch Praia">
+        <div class="galeria-legenda">Kit Pegue e Monte - Stitch Praia</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img12.jpeg" alt="Kit Pegue e Monte - Hulk com Balão">
+        <div class="galeria-legenda">Kit Pegue e Monte - Hulk com Balão</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img13.jpeg" alt="Kit Pegue e Monte - hotwheels com Balão">
+        <div class="galeria-legenda">Kit Pegue e Monte - Hotwheels com Balão</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img14.jpeg" alt="Kit Pegue e Monte - Fundo do Mar">
+        <div class="galeria-legenda">Kit Pegue e Monte - Fundo do Mar</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img15.jpeg" alt="Kit Pegue e Monte - Elefantinho rosa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Elefantinho rosa</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img16.jpeg" alt="Kit Pegue e Monte - Stitch">
+        <div class="galeria-legenda">Kit Pegue e Monte - Stitch</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img17.jpeg" alt="Kit Pegue e Monte - Pool Party">
+        <div class="galeria-legenda">Kit Pegue e Monte - Pool Party</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img18.jpeg" alt="Kit Pegue e Monte - Stitch Confeiteiro">
+        <div class="galeria-legenda">Kit Pegue e Monte - Stitch Confeiteiro</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img19.jpeg" alt="Kit Pegue e Monte - Enrolados - Rapunzel">
+        <div class="galeria-legenda">Kit Pegue e Monte - Enrolados - Rapunzel</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img20.jpeg" alt="Kit Pegue e Monte - Magali">
+        <div class="galeria-legenda">Kit Pegue e Monte - Magali</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img21.jpeg" alt="Kit Pegue e Monte - Black clover">
+        <div class="galeria-legenda">Kit Pegue e Monte - Black Clover</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img22.jpeg" alt="Kit Pegue e Monte - Minha Mãe é uma Peça">
+        <div class="galeria-legenda">Kit Pegue e Monte - Minha Mãe é uma Peça</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img23.jpeg" alt="Kit Pegue e Monte - Chuva de Amor">
+        <div class="galeria-legenda">Kit Pegue e Monte - Chuva de Amor</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img24.jpeg" alt="Kit Pegue e Monte - Divertidamente">
+        <div class="galeria-legenda">Kit Pegue e Monte - Divertidamente</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img25.jpeg" alt="Kit Pegue e Monte - patati patatá">
+        <div class="galeria-legenda">Kit Pegue e Monte - Patati Patatá</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img26.jpeg" alt="Kit Pegue e Monte - Frozen">
+        <div class="galeria-legenda">Kit Pegue e Monte - Frozen</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img27.jpeg" alt="Kit Pegue e Monte - Moranguinho Baby">
+        <div class="galeria-legenda">Kit Pegue e Monte - Moranguinho Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img28.jpeg" alt="Kit Pegue e Monte - Tardezinha">
+        <div class="galeria-legenda">Kit Pegue e Monte - Tardezinha</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img29.jpeg" alt="Kit Pegue e Monte - Gratidão">
+        <div class="galeria-legenda">Kit Pegue e Monte - Gratidão</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img30.jpeg" alt="Kit Pegue e Monte - Vingadores">
+        <div class="galeria-legenda">Kit Pegue e Monte - Vingadores</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img31.jpeg" alt="Kit Pegue e Monte - Preto com Dourado">
+        <div class="galeria-legenda">Kit Pegue e Monte - Preto com Dourado</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img32.jpeg" alt="Kit Pegue e Monte - Dia dos Namorados">
+        <div class="galeria-legenda">Kit Pegue e Monte - Dia dos Namorados</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img33.jpeg" alt="Kit Pegue e Monte - princesa sofia">
+        <div class="galeria-legenda">Kit Pegue e Monte - Princesa Sofia</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img34.jpeg" alt="Kit Pegue e Monte - Casamento">
+        <div class="galeria-legenda">Kit Pegue e Monte - Casamento </div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img35.jpeg"
+          alt="Kit Pegue e Monte - chá revelação ursinhos Azul e Rosa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Chá Revelação Ursinhos Azul e Rosa</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img36.jpeg" alt="Kit Pegue e Monte - Homen Aranhar">
+        <div class="galeria-legenda">Kit Pegue e Monte - Homen Aranha</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img37.jpeg" alt="Kit Pegue e Monte - Bento e Totó">
+        <div class="galeria-legenda">Kit Pegue e Monte - Bento e Totó</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img38.jpeg" alt="Kit Pegue e Monte - Pokémon">
+        <div class="galeria-legenda">Kit Pegue e Monte - Pokémon</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img39.jpeg"
+          alt="Kit Pegue e Monte - Chá Revelação Ursinhos Verde e Lilás">
+        <div class="galeria-legenda">Kit Pegue e Monte - Chá Revelação Ursinhos Verde e Lilás</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img40.jpeg" alt="Kit Pegue e Monte - Ursinho Marinheiro">
+        <div class="galeria-legenda">Kit Pegue e Monte - Ursinho Marinheiro</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img41.jpeg" alt="Kit Pegue e Monte - Futebol">
+        <div class="galeria-legenda">Kit Pegue e Monte - Futebol</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img42.jpeg" alt="Kit Pegue e Monte - Ursinho Príncipe">
+        <div class="galeria-legenda">Kit Pegue e Monte - Ursinho Príncipe</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img43.jpeg" alt="Kit Pegue e Monte - Festa Junina">
+        <div class="galeria-legenda">Kit Pegue e Monte - Festa Junina</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img44.jpeg" alt="Kit Pegue e Monte - Pequeno Príncipe">
+        <div class="galeria-legenda">Kit Pegue e Monte - Pequeno Príncipe</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img45.jpeg" alt="Kit Pegue e Monte - hotwheels 2">
+        <div class="galeria-legenda">Kit Pegue e Monte - Hotwheels 2</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img46.jpeg" alt="Kit Pegue e Monte - Chá Revelação Elefantinho">
+        <div class="galeria-legenda">Kit Pegue e Monte - Chá Revelação Elefantinho</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img47.jpeg" alt="Kit Pegue e Monte - Elefantinho Azul">
+        <div class="galeria-legenda">Kit Pegue e Monte - Elefantinho Azul</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img48.jpeg" alt="Kit Pegue e Monte - monster high">
+        <div class="galeria-legenda">Kit Pegue e Monte - Monster High</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img49.jpeg" alt="Kit Pegue e Monte - Bolo Fofo">
+        <div class="galeria-legenda">Kit Pegue e Monte - Bolo Fofo</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img50.jpeg" alt="Kit Pegue e Monte - Roblox">
+        <div class="galeria-legenda">Kit Pegue e Monte - Roblox</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img51.jpeg" alt="Kit Pegue e Monte - Luccas Neto">
+        <div class="galeria-legenda">Kit Pegue e Monte - Luccas Neto</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img52.jpeg" alt="Kit Pegue e Monte -  Sonic">
+        <div class="galeria-legenda">Kit Pegue e Monte - Sonic</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img53.jpeg" alt="Kit Pegue e Monte - Batizado">
+        <div class="galeria-legenda">Kit Pegue e Monte - Batizado</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img54.jpeg" alt="Kit Pegue e Monte - Fazendinha Menino">
+        <div class="galeria-legenda">Kit Pegue e Monte - Fazendinha Menino</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img55.jpeg" alt="Kit Pegue e Monte -  mickey e minnie">
+        <div class="galeria-legenda">Kit Pegue e Monte - Mickey e Minnie </div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img56.jpeg" alt="Kit Pegue e Monte - Minnie Vermelha">
+        <div class="galeria-legenda">Kit Pegue e Monte - Minnie Vermelha</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img57.jpeg" alt="Kit Pegue e Monte - Borboleta Rosa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Borboleta Rosa</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img58.jpeg" alt="Kit Pegue e Monte - Luccas Neto 2">
+        <div class="galeria-legenda">Kit Pegue e Monte - Luccas Neto 2</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img59.jpeg" alt="Kit Pegue e Monte - Hulk">
+        <div class="galeria-legenda">Kit Pegue e Monte - Hulk</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img60.jpeg" alt="Kit Pegue e Monte - Magali Baby">
+        <div class="galeria-legenda">Kit Pegue e Monte - Magali Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img61.jpeg" alt="Kit Pegue e Monte - Capitão américa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Capitão América</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img62.jpeg" alt="Kit Pegue e Monte - Neon">
+        <div class="galeria-legenda">Kit Pegue e Monte - Neon</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img63.jpeg" alt="Kit Pegue e Monte - cinderela">
+        <div class="galeria-legenda">Kit Pegue e Monte - Cinderela</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img64.jpeg" alt="Kit Pegue e Monte - Carros">
+        <div class="galeria-legenda">Kit Pegue e Monte - Carros </div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img65.jpeg" alt="Kit Pegue e Monte - Homem Aranha no Aranhaverso">
+        <div class="galeria-legenda">Kit Pegue e Monte - Homem Aranha no Aranhaverso</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img66.jpeg" alt="Kit Pegue e Monte - Amy Rose">
+        <div class="galeria-legenda">Kit Pegue e Monte - Amy Rose</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img67.jpeg" alt="Kit Pegue e Monte - stitch e angel">
+        <div class="galeria-legenda">Kit Pegue e Monte - Stitch e Angel</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img68.jpeg" alt="Kit Pegue e Monte - Video Game">
+        <div class="galeria-legenda">Kit Pegue e Monte - Video Game</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img69.jpeg" alt="Kit Pegue e Monte - Tinker Bell - Sininho">
+        <div class="galeria-legenda">Kit Pegue e Monte - Tinker Bell - Sininho</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img70.jpeg" alt="Kit Pegue e Monte - Encanto">
+        <div class="galeria-legenda">Kit Pegue e Monte - Encanto</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img71.jpeg" alt="Kit Pegue e Monte - CoComelon">
+        <div class="galeria-legenda">Kit Pegue e Monte - CoComelon</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img72.jpeg" alt="Kit Pegue e Monte - Princesas">
+        <div class="galeria-legenda">Kit Pegue e Monte - Princesas</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img73.jpeg" alt="Kit Pegue e Monte - Carreta Furacão">
+        <div class="galeria-legenda">Kit Pegue e Monte - Carreta Furacão</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img74.jpeg" alt="Kit Pegue e Monte - Palmeiras">
+        <div class="galeria-legenda">Kit Pegue e Monte - Palmeiras</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img75.jpeg" alt="Kit Pegue e Monte - Flamingos">
+        <div class="galeria-legenda">Kit Pegue e Monte - Flamingos</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img76.jpeg" alt="Kit Pegue e Monte - Barbie">
+        <div class="galeria-legenda">Kit Pegue e Monte - Barbie</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img77.jpeg" alt="Kit Pegue e Monte - Transformers">
+        <div class="galeria-legenda">Kit Pegue e Monte - Transformers</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img78.jpeg" alt="Kit Pegue e Monte - girassol">
+        <div class="galeria-legenda">Kit Pegue e Monte - Girassol</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img79.jpeg" alt="Kit Pegue e Monte - poderosa chefinha">
+        <div class="galeria-legenda">Kit Pegue e Monte - Poderosa Chefinha</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img80.jpeg" alt="Kit Pegue e Monte - patrulha canina">
+        <div class="galeria-legenda">Kit Pegue e Monte - Patrulha Canina</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img81.jpeg" alt="Kit Pegue e Monte - cachorrolandia">
+        <div class="galeria-legenda">Kit Pegue e Monte - Cachorrolandia</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img82.jpeg" alt="Kit Pegue e Monte - Paraná Clube">
+        <div class="galeria-legenda">Kit Pegue e Monte - Paraná Clube</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img83.jpeg" alt="Kit Pegue e Monte - toy story">
+        <div class="galeria-legenda">Kit Pegue e Monte - Toy Story</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img84.jpeg" alt="Kit Pegue e Monte - demon slayer">
+        <div class="galeria-legenda">Kit Pegue e Monte - Demon Slayer</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img85.jpeg" alt="Kit Pegue e Monte - Fazendinha Rosa">
+        <div class="galeria-legenda">Kit Pegue e Monte - Fazendinha Rosa</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img86.jpeg" alt="Kit Pegue e Monte - 365 Sorrisos">
+        <div class="galeria-legenda">Kit Pegue e Monte - 365 Sorrisos</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img87.jpeg" alt="Kit Pegue e Monte - Minnie Baby">
+        <div class="galeria-legenda">Kit Pegue e Monte - Minnie Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img88.jpeg" alt="Kit Pegue e Monte - Skye Everest">
+        <div class="galeria-legenda">Kit Pegue e Monte - Skye Everest</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img89.jpeg" alt="Kit Pegue e Monte - Unicórnio Baby">
+        <div class="galeria-legenda">Kit Pegue e Monte - Unicórnio Baby</div>
+      </div>
+      <div class="galeria-item" data-categoria="pegue-monte">
+        <img data-src="./images/galeria/pegue-e-monte/img90.jpeg" alt="Kit Pegue e Monte - Unicórnio">
+        <div class="galeria-legenda">Kit Pegue e Monte - Unicórnio</div>
+      </div>
+
+
+      <!-- agendas personalizadas-->
+
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img1.webp" alt="Agenda Personalizada - Stitch">
+        <div class="galeria-legenda">Agenda Personalizada - Stitch</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img2.webp" alt="Agenda Personalizada - Sonic 3">
+        <div class="galeria-legenda">Agenda Personalizada - Sonic 3</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img3.webp" alt="Agenda Personalizada - Sonic">
+        <div class="galeria-legenda">Agenda Personalizada - Sonic</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img4.webp" alt="Agenda Personalizada - Flores">
+        <div class="galeria-legenda">Agenda Personalizada - Flores</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img5.webp" alt="Agenda Personalizada - Stitch">
+        <div class="galeria-legenda">Agenda Personalizada - Stitch</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img6.webp" alt="Agenda Personalizada - Sonic">
+        <div class="galeria-legenda">Agenda Personalizada - Sonic</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img7.webp" alt="Agenda Personalizada - Enrrolados">
+        <div class="galeria-legenda">Agenda Personalizada - Enrrolados</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img8.webp" alt="Agenda Personalizada - Patrulha Canina">
+        <div class="galeria-legenda">Agenda Personalizada - Patrulha Canina</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img9.webp" alt="Agenda Personalizada - Menino">
+        <div class="galeria-legenda">Agenda Personalizada - Menino</div>
+      </div>
+      <div class="galeria-item" data-categoria="agendas">
+        <img data-src="./images/galeria/agendas-personalizadas/img10.webp" alt="Agenda Personalizada - Amor">
+        <div class="galeria-legenda">Agenda Personalizada - Amor</div>
+      </div>
+
+      <!-- topos de bolo-->
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img1.webp" alt="Topo de Bolo - Wandinha">
+        <div class="galeria-legenda">Topo de Bolo - Wandinha </div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img2.webp" alt="Topo de Bolo - Borboleta 3D">
+        <div class="galeria-legenda">Topo de Bolo - Borboleta 3D</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img3.webp" alt="Topo de Bolo - Bob Esponja">
+        <div class="galeria-legenda">Topo de Bolo - Bob Esponja</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img4.webp" alt="Topo de Bolo - Angel">
+        <div class="galeria-legenda">Topo de Bolo - Angel</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img5.webp" alt="Topo de Bolo - Flor 3D">
+        <div class="galeria-legenda">Topo de Bolo - Flor 3D</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img6.webp" alt="opo de Bolo - Minnie Vermelha">
+        <div class="galeria-legenda">Topo de Bolo - Minnie Vermelha</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img7.webp" alt="Topo de Bolo - Jardim Encantado">
+        <div class="galeria-legenda">Topo de Bolo - Jardim Encantado</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img8.webp" alt="Topo de Bolo - Athletico Paranaense">
+        <div class="galeria-legenda">Topo de Bolo - Athletico Paranaense</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img9.webp" alt="Topo de Bolo - Princesa Sofia">
+        <div class="galeria-legenda">Topo de Bolo - Princesa Sofia</div>
+      </div>
+      <div class="galeria-item" data-categoria="topo-bolo">
+        <img data-src="./images/galeria/topos-de-bolo/img10.webp" alt="Topo de Bolo - Stitch">
+        <div class="galeria-legenda">Topo de Bolo - Stitch</div>
+      </div>
+
+      <!-- algodão doce-->
+
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img1.webp" alt="Algodão Doce - Stitch">
+        <div class="galeria-legenda">Algodão Doce - Stitch</div>
+      </div>
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img2.webp" alt="fotos de algodão doce">
+        <div class="galeria-legenda">Algodão Doce - Ovelha</div>
+      </div>
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img3.webp" alt="fotos de algodão doce">
+        <div class="galeria-legenda">Algodão Doce - Sáfari</div>
+      </div>
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img4.webp" alt="fotos de algodão doce">
+        <div class="galeria-legenda">Algodão Doce - Unicórnio</div>
+      </div>
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img5.webp" alt="fotos de algodão doce">
+        <div class="galeria-legenda">Algodão Doce - Bolo Fofo</div>
+      </div>
+      <div class="galeria-item" data-categoria="algodao-doce">
+        <img data-src="./images/galeria/algodao-doce/img6.webp" alt="fotos de algodão doce">
+        <div class="galeria-legenda">Algodão Doce</div>
+      </div>
+
+      <!-- Lembrancinhas-->
+
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img1.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img2.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img3.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img4.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img5.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img6.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img7.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img8.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img9.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img10.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img11.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img12.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img13.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img14.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img15.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img16.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img17.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img18.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img19.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img20.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img21.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img22.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img23.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img24.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img25.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img26.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img27.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img28.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img29.webp" alt="Lembrancinhas">
+        <div class="galeria-legenda">Lembrancinhas</div>
+      </div>
+
+      <!-- Brinquedos -->
+
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img1.webp" alt="Cama elástica">
+        <div class="galeria-legenda">Cama elástica</div>
+      </div>
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img2.webp" alt="Cama elástica">
+        <div class="galeria-legenda">Cama elástica</div>
+      </div>
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img3.webp" alt="Piscina de bolinhas">
+        <div class="galeria-legenda">Piscina de Bolinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img4.webp" alt="Cama elástica">
+        <div class="galeria-legenda">Cama elástica</div>
+      </div>
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img5.webp" alt="Piscina de bolinhasa">
+        <div class="galeria-legenda">Piscina de Bolinhas</div>
+      </div>
+      <div class="galeria-item" data-categoria="Brinquedos">
+        <img data-src="./images/galeria/brinquedos/img6.webp" alt="Cama elástica">
+        <div class="galeria-legenda">Cama elástica</div>
+      </div>
+    </div>
+  </section>
+  <div class="galeria-container" id="minhaGaleria">
+    <!-- Suas imagens aqui (mantenha como já estão) -->
+  </div>
+
+
+  <!-- Modal para exibir a foto em tamanho maior -->
+  <div id="modal" class="modal"><span class="fechar-modal">&times;</span>
+    <img id="modal-imagem" class="modal-conteudo" alt="Foto ampliada">
+  </div>
+
+
+
+  <footer>
+    <div class="wave-container">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <div class="footer-content">
+      <h2 class="neon-text floating-text">Conecte-se Conosco</h2>
+      <p>Siga nossas redes sociais para ficar por dentro das novidades</p>
+
+      <div class="social-hologram">
+        <a href="https://wa.me/+5541988039437" target="_blank" class="hologram-button whatsapp">
+          <i class="fab fa-whatsapp hologram-icon"></i>
+        </a>
+        <a href="https://www.instagram.com/bella_arte_3654?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" class="hologram-button instagram">
+          <i class="fab fa-instagram hologram-icon"></i>
+        </a>
+        <a href="#" class="hologram-button facebook">
+          <i class="fab fa-facebook-f hologram-icon"></i>
+        </a>
+      </div>
+
+      <p class="floating-text" style="animation-delay: 0.3s;">© 2025 Bella Arte Festas. Todos os direitos reservados.
+      </p>
+
+      <!-- Links para as páginas de Política de Privacidade, Quem Somos e Termos de Uso -->
+      <div class="footer-links">
+        <a href="politica-de-privacidade.html" class="footer-link">Política de Privacidade</a> |
+        <a href="quem-somos.html" class="footer-link">Quem Somos</a> |
+        <a href="termos-de-uso.html" class="footer-link">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/+5541988039437" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- efeito de balões -->
+  <div id="baloes-container"></div>
+
+  <script src="script.js"></script>
+
+
+</body>
