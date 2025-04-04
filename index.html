@@ -1,44 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-br"> <!-- Adicione o atributo lang -->
+<html lang="pt-br">
 
 <head>
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <meta property="og:title" content="Bella Arte - Decoração de Festas">
-  <meta property="og:image" content="URL_DA_LOGO">
-  <meta name="description"
-    content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba, Piraquara, pinhais e região">
-
+  <!-- Configuração básica -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Site de decoração de festas infantis, casamentos e anos.  Encontre a decoração perfeita para o seu evento!">
-  <meta name="keywords"
-    content="decoração de festas, festas infantis, casamento, anos, decoração, eventos, organização de festas">
-  <meta name="author" content="Bella arte">
-  <title>Bella arte</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="author" content="Bella Arte">
+  <meta name="robots" content="index, follow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
+  <!-- SEO e Compartilhamento -->
+  <meta name="description" content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba, Piraquara, Pinhais e região. Encontre a decoração perfeita para o seu evento!">
+  <meta name="keywords" content="decoração de festas, festas infantis, casamento, aniversário, eventos, organização de festas">
+
+  <!-- Open Graph (Para Facebook, WhatsApp, etc.) -->
+  <meta property="og:title" content="Bella Arte - Decoração de Festas">
+  <meta property="og:description" content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba e região.">
+  <meta property="og:image" content="URL_DA_LOGO">
+  <meta property="og:url" content="https://SEU_SITE.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bella Arte - Decoração de Festas">
+  <meta name="twitter:description" content="Transforme seu evento com a melhor decoração de Curitiba e região!">
+  <meta name="twitter:image" content="URL_DA_LOGO">
+
+  <!-- Ícones -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK6BLVBCHT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-BK6BLVBCHT');
   </script>
 
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <title>Bella Arte - Decoração de Festas</title>
 </head>
+
 
 
 <body>
@@ -62,6 +73,29 @@
       única e inesquecível.</p>
     <p>Conte comigo para tornar seu evento especial!</p>
   </section>
+
+  <!-- Ultimos trabalhos realizados -->
+
+  <section id="ultimos-servicos" class="servicos-section">
+    <h2>Últimos Trabalhos Realizados</h2>
+    <div class="galeria-servicos">
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img1.jpeg" alt="Decoração de Aniversário Tema Enrolados">
+        <p>Aniversário Tema Enrolados</p>
+      </div>
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img2.jpeg" alt="Decoração de Aniversário Tema Pool Party">
+        <p> Aniversário Tema Pool Party</p>
+      </div>
+      <div class="servico-item">
+        <img src="./images/galeria/servico/img3.jpeg" alt="Decoração de chá revelação">
+        <p>Aniversário Tema Bob Esponja</p>
+      </div>
+
+      <!-- Adicione mais serviços aqui -->
+    </div>
+  </section>
+  
 
   <section id="servicos">
     <h2>Nossos Serviços</h2>
@@ -181,52 +215,52 @@
     <div class="galeria-container">
       <!-- Decoração -->
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img1.jpeg" alt="Decoração Completa - Fazendinha">
+        <img data-src="./images/galeria/decoracoes/img1.webp" alt="Decoração Completa - Fazendinha">
         <div class="galeria-legenda">Decoração Completa - Fazendinha</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img2.jpeg" alt="Decoração Completa - Dino Baby">
+        <img data-src="./images/galeria/decoracoes/img2.webp" alt="Decoração Completa - Dino Baby">
         <div class="galeria-legenda">Decoração Completa - Dino Baby</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img3.jpeg" alt="Decoração completa  - Sonic">
+        <img data-src="./images/galeria/decoracoes/img3.webp" alt="Decoração completa  - Sonic">
         <div class="galeria-legenda">Decoração completa - Sonic </div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img4.jpeg" alt="Decoração Completa - patati patatás">
+        <img data-src="./images/galeria/decoracoes/img4.webp" alt="Decoração Completa - patati patatás">
         <div class="galeria-legenda">Decoração Completa - patati patatá</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img5.jpeg" alt="Decoração Completa - Minnie Baby">
+        <img data-src="./images/galeria/decoracoes/img5.webp" alt="Decoração Completa - Minnie Baby">
         <div class="galeria-legenda">Decoração Completa - Minnie Baby</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img6.jpeg" alt="Decoração Completa - Dino Baby">
+        <img data-src="./images/galeria/decoracoes/img6.webp" alt="Decoração Completa - Dino Baby">
         <div class="galeria-legenda">Decoração Completa - Dino Baby</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img7.jpeg" alt="Decoração Completa - Stitch Confeiteiro">
+        <img data-src="./images/galeria/decoracoes/img7.webp" alt="Decoração Completa - Stitch Confeiteiro">
         <div class="galeria-legenda">Decoração Completa - Stitch Confeiteiro</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img8.jpeg" alt="Decoração Completa - 365 Sorrisos">
+        <img data-src="./images/galeria/decoracoes/img8.webp" alt="Decoração Completa - 365 Sorrisos">
         <div class="galeria-legenda">Decoração Completa - 365 Sorrisos</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img9.jpeg" alt="Decoração Completa - Moranguinho">
+        <img data-src="./images/galeria/decoracoes/img9.webp" alt="Decoração Completa - Moranguinho">
         <div class="galeria-legenda">Decoração Completa - Moranguinho</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img10.jpeg" alt="Decoração Completa - Chuva de Amor">
+        <img data-src="./images/galeria/decoracoes/img10.webp" alt="Decoração Completa - Chuva de Amor">
         <div class="galeria-legenda">Decoração Completa - Chuva de Amor</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img11.jpeg" alt="Decoração Completa - Dino Baby">
-        <div class="galeria-legenda">Decoração Completa - Minnie Rosa e Futebol</div>
+        <img data-src="./images/galeria/decoracoes/img11.webp" alt="Decoração Completa - Tinker Bell e Hotwheels">
+        <div class="galeria-legenda">Decoração Completa - Tinker Bell e Hotwheels</div>
       </div>
       <div class="galeria-item" data-categoria="decoracao">
-        <img data-src="./images/galeria/decoracoes/img12.jpeg" alt="Decoração Completa - tinker bell e Hotwheels">
-        <div class="galeria-legenda">Decoração Completa - Tinker Bell e Hotwheels</div>
+        <img data-src="./images/galeria/decoracoes/img12.webp" alt="Decoração Completa - Minnie Rosa e Futebol">
+        <div class="galeria-legenda">Decoração Completa - Minnie Baby e Futebol</div>
       </div>
 
 
@@ -599,271 +633,268 @@
       <!-- agendas personalizadas-->
 
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img1.jpeg" alt="Agenda Personalizada - Stitch">
+        <img data-src="./images/galeria/agendas-personalizadas/img1.webp" alt="Agenda Personalizada - Stitch">
         <div class="galeria-legenda">Agenda Personalizada - Stitch</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img2.jpeg" alt="Agenda Personalizada - Sonic 3">
+        <img data-src="./images/galeria/agendas-personalizadas/img2.webp" alt="Agenda Personalizada - Sonic 3">
         <div class="galeria-legenda">Agenda Personalizada - Sonic 3</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img3.jpeg" alt="Agenda Personalizada - Sonic">
+        <img data-src="./images/galeria/agendas-personalizadas/img3.webp" alt="Agenda Personalizada - Sonic">
         <div class="galeria-legenda">Agenda Personalizada - Sonic</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img4.jpeg" alt="Agenda Personalizada - Flores">
+        <img data-src="./images/galeria/agendas-personalizadas/img4.webp" alt="Agenda Personalizada - Flores">
         <div class="galeria-legenda">Agenda Personalizada - Flores</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img5.jpeg" alt="Agenda Personalizada - Stitch">
+        <img data-src="./images/galeria/agendas-personalizadas/img5.webp" alt="Agenda Personalizada - Stitch">
         <div class="galeria-legenda">Agenda Personalizada - Stitch</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img6.jpeg" alt="Agenda Personalizada - Sonic">
+        <img data-src="./images/galeria/agendas-personalizadas/img6.webp" alt="Agenda Personalizada - Sonic">
         <div class="galeria-legenda">Agenda Personalizada - Sonic</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img7.jpeg" alt="Agenda Personalizada - Enrrolados">
+        <img data-src="./images/galeria/agendas-personalizadas/img7.webp" alt="Agenda Personalizada - Enrrolados">
         <div class="galeria-legenda">Agenda Personalizada - Enrrolados</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img8.jpeg" alt="Agenda Personalizada - Patrulha Canina">
+        <img data-src="./images/galeria/agendas-personalizadas/img8.webp" alt="Agenda Personalizada - Patrulha Canina">
         <div class="galeria-legenda">Agenda Personalizada - Patrulha Canina</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img9.jpeg" alt="Agenda Personalizada - Menino">
+        <img data-src="./images/galeria/agendas-personalizadas/img9.webp" alt="Agenda Personalizada - Menino">
         <div class="galeria-legenda">Agenda Personalizada - Menino</div>
       </div>
       <div class="galeria-item" data-categoria="agendas">
-        <img data-src="./images/galeria/agendas-personalizadas/img10.jpeg" alt="Agenda Personalizada - Amor">
+        <img data-src="./images/galeria/agendas-personalizadas/img10.webp" alt="Agenda Personalizada - Amor">
         <div class="galeria-legenda">Agenda Personalizada - Amor</div>
       </div>
 
       <!-- topos de bolo-->
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img1.jpeg" alt="Topo de Bolo - Wandinha">
+        <img data-src="./images/galeria/topos-de-bolo/img1.webp" alt="Topo de Bolo - Wandinha">
         <div class="galeria-legenda">Topo de Bolo - Wandinha </div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img2.jpeg" alt="Topo de Bolo - Borboleta 3D">
+        <img data-src="./images/galeria/topos-de-bolo/img2.webp" alt="Topo de Bolo - Borboleta 3D">
         <div class="galeria-legenda">Topo de Bolo - Borboleta 3D</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img3.jpeg" alt="Topo de Bolo - Bob Esponja">
+        <img data-src="./images/galeria/topos-de-bolo/img3.webp" alt="Topo de Bolo - Bob Esponja">
         <div class="galeria-legenda">Topo de Bolo - Bob Esponja</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img4.jpeg" alt="Topo de Bolo - Angel">
+        <img data-src="./images/galeria/topos-de-bolo/img4.webp" alt="Topo de Bolo - Angel">
         <div class="galeria-legenda">Topo de Bolo - Angel</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img5.jpeg" alt="Topo de Bolo - Flor 3D">
+        <img data-src="./images/galeria/topos-de-bolo/img5.webp" alt="Topo de Bolo - Flor 3D">
         <div class="galeria-legenda">Topo de Bolo - Flor 3D</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img6.jpeg" alt="opo de Bolo - Minnie Vermelha">
+        <img data-src="./images/galeria/topos-de-bolo/img6.webp" alt="opo de Bolo - Minnie Vermelha">
         <div class="galeria-legenda">Topo de Bolo - Minnie Vermelha</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img7.jpeg" alt="Topo de Bolo - Jardim Encantado">
+        <img data-src="./images/galeria/topos-de-bolo/img7.webp" alt="Topo de Bolo - Jardim Encantado">
         <div class="galeria-legenda">Topo de Bolo - Jardim Encantado</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img8.jpeg" alt="opo de Bolo - Athletico Paranaense">
+        <img data-src="./images/galeria/topos-de-bolo/img8.webp" alt="Topo de Bolo - Athletico Paranaense">
         <div class="galeria-legenda">Topo de Bolo - Athletico Paranaense</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img9.jpeg" alt="Topo de Bolo - Princesa Sofia">
+        <img data-src="./images/galeria/topos-de-bolo/img9.webp" alt="Topo de Bolo - Princesa Sofia">
         <div class="galeria-legenda">Topo de Bolo - Princesa Sofia</div>
       </div>
       <div class="galeria-item" data-categoria="topo-bolo">
-        <img data-src="./images/galeria/topos-de-bolo/img10.jpeg" alt="Topo de Bolo - Stitch">
+        <img data-src="./images/galeria/topos-de-bolo/img10.webp" alt="Topo de Bolo - Stitch">
         <div class="galeria-legenda">Topo de Bolo - Stitch</div>
       </div>
 
       <!-- algodão doce-->
 
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img1.jpeg" alt="Algodão Doce - Stitch">
+        <img data-src="./images/galeria/algodao-doce/img1.webp" alt="Algodão Doce - Stitch">
         <div class="galeria-legenda">Algodão Doce - Stitch</div>
       </div>
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img2.jpeg" alt="fotos de algodão doce">
+        <img data-src="./images/galeria/algodao-doce/img2.webp" alt="fotos de algodão doce">
         <div class="galeria-legenda">Algodão Doce - Ovelha</div>
       </div>
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img3.jpeg" alt="fotos de algodão doce">
+        <img data-src="./images/galeria/algodao-doce/img3.webp" alt="fotos de algodão doce">
         <div class="galeria-legenda">Algodão Doce - Sáfari</div>
       </div>
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img4.jpeg" alt="fotos de algodão doce">
+        <img data-src="./images/galeria/algodao-doce/img4.webp" alt="fotos de algodão doce">
         <div class="galeria-legenda">Algodão Doce - Unicórnio</div>
       </div>
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img5.jpeg" alt="fotos de algodão doce">
+        <img data-src="./images/galeria/algodao-doce/img5.webp" alt="fotos de algodão doce">
         <div class="galeria-legenda">Algodão Doce - Bolo Fofo</div>
       </div>
       <div class="galeria-item" data-categoria="algodao-doce">
-        <img data-src="./images/galeria/algodao-doce/img6.jpeg" alt="fotos de algodão doce">
+        <img data-src="./images/galeria/algodao-doce/img6.webp" alt="fotos de algodão doce">
         <div class="galeria-legenda">Algodão Doce</div>
       </div>
 
       <!-- Lembrancinhas-->
 
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img1.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img1.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img2.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img2.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img3.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img3.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img4.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img4.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img5.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img5.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img6.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img6.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img7.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img7.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img8.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img8.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img9.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img9.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img10.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img10.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img11.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img11.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img12.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img12.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img13.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img13.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img14.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img14.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img15.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img15.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img16.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img16.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img17.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img17.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img18.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img18.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img19.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img19.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img20.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img20.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img21.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img21.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img22.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img22.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img23.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img23.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img24.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img24.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img25.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img25.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img26.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img26.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img27.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img27.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img28.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img28.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Lembrancinhas">
-        <img data-src="./images/galeria/lembrancinhas/img29.jpeg" alt="Lembrancinhas">
+        <img data-src="./images/galeria/lembrancinhas/img29.webp" alt="Lembrancinhas">
         <div class="galeria-legenda">Lembrancinhas</div>
       </div>
 
       <!-- Brinquedos -->
 
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img1.jpeg" alt="Cama elástica">
+        <img data-src="./images/galeria/brinquedos/img1.webp" alt="Cama elástica">
         <div class="galeria-legenda">Cama elástica</div>
       </div>
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img2.jpeg" alt="Cama elástica">
+        <img data-src="./images/galeria/brinquedos/img2.webp" alt="Cama elástica">
         <div class="galeria-legenda">Cama elástica</div>
       </div>
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img3.jpeg" alt="Piscina de bolinhas">
+        <img data-src="./images/galeria/brinquedos/img3.webp" alt="Piscina de bolinhas">
         <div class="galeria-legenda">Piscina de Bolinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img4.jpeg" alt="Cama elástica">
+        <img data-src="./images/galeria/brinquedos/img4.webp" alt="Cama elástica">
         <div class="galeria-legenda">Cama elástica</div>
       </div>
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img5.jpeg" alt="Piscina de bolinhasa">
+        <img data-src="./images/galeria/brinquedos/img5.webp" alt="Piscina de bolinhasa">
         <div class="galeria-legenda">Piscina de Bolinhas</div>
       </div>
       <div class="galeria-item" data-categoria="Brinquedos">
-        <img data-src="./images/galeria/brinquedos/img6.jpeg" alt="Cama elástica">
+        <img data-src="./images/galeria/brinquedos/img6.webp" alt="Cama elástica">
         <div class="galeria-legenda">Cama elástica</div>
       </div>
     </div>
-  </section>
-
-  <div class="galeria-container" id="minhaGaleria">
+  </section>webp<div class="galeria-container" id="minhaGaleria">
     <!-- Suas imagens aqui (mantenha como já estão) -->
   </div>
 
 
   <!-- Modal para exibir a foto em tamanho maior -->
-  <div id="modal" class="modal">
-    <span class="fechar-modal">&times;</span>
+  <div id="modal" class="modal">webp <span class="fechar-modal">&times;</span>
     <img id="modal-imagem" class="modal-conteudo" alt="Foto ampliada">
   </div>
 
@@ -875,24 +906,26 @@
       <div class="wave"></div>
       <div class="wave"></div>
     </div>
-    
+
     <div class="footer-content">
       <h2 class="neon-text floating-text">Conecte-se Conosco</h2>
       <p>Siga nossas redes sociais para ficar por dentro das novidades</p>
-      
+
       <div class="social-hologram">
         <a href="https://wa.me/+5541988039437" target="_blank" class="hologram-button whatsapp">
           <i class="fab fa-whatsapp hologram-icon"></i>
         </a>
-        <a href="https://www.instagram.com/bella_arte_3654?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hologram-button instagram">
+        <a href="https://www.instagram.com/bella_arte_3654?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" class="hologram-button instagram">
           <i class="fab fa-instagram hologram-icon"></i>
         </a>
-        <a href="https://www.facebook.com/share/12KtxMvLgxD/" class="hologram-button facebook">
+        <a href="#" class="hologram-button facebook">
           <i class="fab fa-facebook-f hologram-icon"></i>
         </a>
       </div>
-      
-      <p class="floating-text" style="animation-delay: 0.3s;">© 2023 Bella Arte Festas. Todos os direitos reservados.</p>
+
+      <p class="floating-text" style="animation-delay: 0.3s;">© 2025 Bella Arte Festas. Todos os direitos reservados.
+      </p>
     </div>
   </footer>
 
