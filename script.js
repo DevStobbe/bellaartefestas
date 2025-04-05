@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   function initLazyLoad() {
     const lazyImages = document.querySelectorAll('.galeria-item img');
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, observer) => { // Corrigido o nome
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting) { 
           const img = entry.target;
-          img.src = img.dataset.src; // Substitui o src pelo data-src
+          img.src = img.dataset.src;
           img.classList.add('loaded');
           observer.unobserve(img);
         }
       });
     }, {
-      rootMargin: '100px', // Carrega a imagem um pouco antes de entrar na tela
+      rootMargin: '100px',
       threshold: 0.1
     });
 
@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   initLazyLoad();
-
-  // 1. Efeito de Carregamento
+  // Efeito de Carregamento
   const loadingScreen = document.createElement('div');
   loadingScreen.className = 'loading-screen';
   loadingScreen.innerHTML = `
@@ -42,11 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function initPage() {
     initGallery();
     initModal();
+    initUltimosTrabalhosModal(); // Adicionado aqui dentro
     animateSections();
     initButtonEffects();
   }
 
-  // 2. Efeito de Balões nos Botões
+  // Efeito de Balões nos Botões
   function initButtonEffects() {
     const buttons = document.querySelectorAll('nav a, .filtro-btn');
     
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // 3. Galeria com Filtros
+  // Galeria com Filtros
   function initGallery() {
     const galleryItems = document.querySelectorAll('.galeria-item');
     const filterButtons = document.querySelectorAll('.filtro-btn');
@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  function initModal() {
+  // Modal de Imagens
+  function initModal() {    
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-imagem');
     const closeBtn = document.querySelector('.fechar-modal');
@@ -195,13 +196,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Ao clicar em uma imagem, atualiza a lista de imagens visíveis e abre o modal
-    document.querySelectorAll('.galeria-item img').forEach(img => {
+    document.querySelectorAll('.galeria-item img:not(.ultimos-trabalhos-img)').forEach(img => {
       img.addEventListener('click', function() {
         updateVisibleImages();
         currentImageIndex = visibleImages.findIndex(vi => vi === this);
         openModal(this.src);
       });
     });
+    
+    
     
     function openModal(src) {
       modal.style.display = 'block';
@@ -255,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
-  // 5. Animar Seções
+
+  // Animar Seções
   function animateSections() {
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
@@ -267,4 +270,75 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+// Modal específico para Últimos Trabalhos
+function initUltimosTrabalhosModal() {
+  const modal = document.getElementById('modal-ultimos');
+  const modalImg = document.getElementById('modal-ultimos-img');
+  const modalLegenda = document.getElementById('modal-ultimos-legenda');
+  const closeBtn = document.querySelector('.fechar-modal-ultimos');
+  const prevBtn = document.querySelector('.prev-ultimos-btn');
+  const nextBtn = document.querySelector('.next-ultimos-btn');
+  
+  const ultimasImagens = Array.from(document.querySelectorAll('#ultimos-servicos .galeria-item img'));
+  const legendas = Array.from(document.querySelectorAll('#ultimos-servicos .galeria-legenda'));
+  
+  let currentIndex = 0;
+  
+  // Abre o modal com a imagem clicada
+  ultimasImagens.forEach((img, index) => {
+    img.addEventListener('click', function() {
+      currentIndex = index;
+      updateModal();
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Atualiza o modal com a imagem e legenda atual
+  function updateModal() {
+    modalImg.src = ultimasImagens[currentIndex].src;
+    modalLegenda.textContent = legendas[currentIndex].textContent;
+  }
+  
+  // Navegação
+  function navigate(direction) {
+    if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + ultimasImagens.length) % ultimasImagens.length;
+    } else {
+      currentIndex = (currentIndex + 1) % ultimasImagens.length;
+    }
+    updateModal();
+  }
+  
+  // Event listeners
+  prevBtn.addEventListener('click', () => navigate('prev'));
+  nextBtn.addEventListener('click', () => navigate('next'));
+  
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (modal.style.display === 'block') {
+      if (e.key === 'ArrowLeft') {
+        navigate('prev');
+      } else if (e.key === 'ArrowRight') {
+        navigate('next');
+      } else if (e.key === 'Escape') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+  });
+}
 

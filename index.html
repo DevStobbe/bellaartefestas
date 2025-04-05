@@ -80,21 +80,25 @@
 
   <section id="ultimos-servicos" class="servicos-section">
     <h2>Últimos Trabalhos Realizados</h2>
+    
     <div class="galeria-servicos">
-      <div class="servico-item">
-        <img src="./images/galeria/servico/img1.jpeg" alt="Decoração de Aniversário Tema Enrolados">
-        <p>Aniversário Tema Enrolados</p>
+
+      <div class="galeria-item" data-categoria="ultimos-trabalhos">
+        <img class="ultimos-trabalhos-img" data-src="./images/galeria/servico/img1.jpeg" alt="Decoração de Aniversário Tema Enrolados">
+        <div class="galeria-legenda">Aniversário Tema Enrolados</div>
       </div>
-      <div class="servico-item">
-        <img src="./images/galeria/servico/img2.jpeg" alt="Decoração de Aniversário Tema Pool Party">
-        <p> Aniversário Tema Pool Party</p>
-      </div>
-      <div class="servico-item">
-        <img src="./images/galeria/servico/img3.jpeg" alt="Decoração de chá revelação">
-        <p>Aniversário Tema Bob Esponja</p>
+      
+
+      <div class="galeria-item" data-categoria="ultimos-trabalhos">
+        <img class="ultimos-trabalhos-img"  data-src="./images/galeria/servico/img2.jpeg" alt="Decoração de Aniversário Tema Pool Party">
+        <div class="galeria-legenda">Aniversário Tema Pool Party</div>
       </div>
 
-      <!-- Adicione mais serviços aqui -->
+      <div class="galeria-item" data-categoria="ultimos-trabalhos">
+        <img class="ultimos-trabalhos-img"  data-src="./images/galeria/servico/img3.jpeg" alt="Decoração de Aniversário Tema Bob Esponja">
+        <div class="galeria-legenda">Aniversário Tema Bob Esponja</div>
+      </div>
+
     </div>
   </section>
 
@@ -948,6 +952,19 @@
   <div id="baloes-container"></div>
 
   <script src="script.js"></script>
+
+
+<!-- Modal Últimos Trabalhos -->
+<div id="modal-ultimos" class="modal">
+  <span class="fechar-modal-ultimos">&times;</span> <!-- Esse é o botão que faltava -->
+  
+  <img id="modal-ultimos-img" class="modal-conteudo" alt="Imagem ampliada">
+  <p id="modal-ultimos-legenda" class="modal-legenda"></p>
+
+  <!-- Botões de navegação -->
+  <button class="modal-btn prev-ultimos-btn">&larr;</button>
+  <button class="modal-btn next-ultimos-btn">&rarr;</button>
+</div>
 
 
 </body>
