@@ -1,17 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
   function initLazyLoad() {
     const lazyImages = document.querySelectorAll('.galeria-item img');
+<<<<<<< HEAD
     const observer = new IntersectionObserver((entries, observer) => { // Corrigido o nome
       entries.forEach(entry => {
         if (entry.isIntersecting) { 
           const img = entry.target;
           img.src = img.dataset.src;
+=======
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src; // Substitui o src pelo data-src
+>>>>>>> origin/developer
           img.classList.add('loaded');
           observer.unobserve(img);
         }
       });
     }, {
+<<<<<<< HEAD
       rootMargin: '100px',
+=======
+      rootMargin: '100px', // Carrega a imagem um pouco antes de entrar na tela
+>>>>>>> origin/developer
       threshold: 0.1
     });
 
@@ -21,7 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   initLazyLoad();
+<<<<<<< HEAD
   // Efeito de Carregamento
+=======
+
+  // 1. Efeito de Carregamento
+>>>>>>> origin/developer
   const loadingScreen = document.createElement('div');
   loadingScreen.className = 'loading-screen';
   loadingScreen.innerHTML = `
@@ -244,6 +261,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === 'block') {
+        if (e.key === 'ArrowLeft') {
+          navigate('prev');
+        } else if (e.key === 'ArrowRight') {
+          navigate('next');
+        } else if (e.key === 'Escape') {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
+    
     
     document.addEventListener('keydown', (e) => {
       if (modal.style.display === 'block') {
