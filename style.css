@@ -9,7 +9,7 @@ body,
 html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
-  background-image: url('./images/mesas.png');
+  background-image: url('./images/mesas.webp');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;

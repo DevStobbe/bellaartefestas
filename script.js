@@ -22,29 +22,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
   initLazyLoad();
   // Efeito de Carregamento
-  const loadingScreen = document.createElement('div');
-  loadingScreen.className = 'loading-screen';
-  loadingScreen.innerHTML = `
-    <div class="loading-spinner"></div>
-    <p>Preparando a Magia...</p>
-  `;
-  document.body.appendChild(loadingScreen);
+ const loadingScreen = document.createElement('div');
+loadingScreen.className = 'loading-screen';
+loadingScreen.innerHTML = `
+  <div class="loading-spinner"></div>
+  <p>Preparando a Magia...</p>
+`;
+document.body.appendChild(loadingScreen);
 
+setTimeout(() => {
+  loadingScreen.style.opacity = '0';
   setTimeout(() => {
-    loadingScreen.style.opacity = '0';
-    setTimeout(() => {
-      loadingScreen.remove();
-      initPage();
-    }, 500);
-  }, 1500);
+    loadingScreen.remove();
 
-  function initPage() {
-    initGallery();
-    initModal();
-    initUltimosTrabalhosModal(); // Adicionado aqui dentro
-    animateSections();
-    initButtonEffects();
-  }
+    // Aplica o background otimizado para mobile após o loading
+    if (window.innerWidth <= 767) {
+      document.body.classList.add('lazy-bg');
+    }
+
+    initPage();
+  }, 500);
+}, 1500);
+
+function initPage() {
+  initGallery();
+  initModal();
+  initUltimosTrabalhosModal(); // Adicionado aqui dentro
+  animateSections();
+  initButtonEffects();
+}
+
 
   // Efeito de Balões nos Botões
   function initButtonEffects() {
