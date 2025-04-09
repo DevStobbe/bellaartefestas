@@ -2,67 +2,70 @@
 <html lang="pt-br">
 
 <head>
+
   <!-- Configuração básica -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Melhor compatibilidade com IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#FF6B6B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#D45F5F" media="(prefers-color-scheme: dark)">
+  
+  <!-- Autor e SEO -->
   <meta name="author" content="Bella Arte">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#FF6B6B"> <!-- Cor do tema para mobile (ex: #cor_principal) -->
+  <meta name="description" content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba, Piraquara, Pinhais e região.">
+  <meta name="keywords" content="decoração de festas, festas infantis, casamento, aniversário, eventos, organização de festas, Curitiba">
 
-  <!-- SEO e Compartilhamento -->
-  <meta name="description"
-    content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba, Piraquara, Pinhais e região. Encontre a decoração perfeita para o seu evento!">
-  <meta name="keywords"
-    content="decoração de festas, festas infantis, casamento, aniversário, eventos, organização de festas, Curitiba, Piraquara, Pinhais">
+  <!-- Conexões pré-estabelecidas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+  <!-- Pré-carregamento -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="scripts.js" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Bella Arte - Decoração de Festas em Curitiba">
-  <meta property="og:description"
-    content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba e região. Orçamento sem compromisso!">
+  <meta property="og:description" content="Decoração profissional para festas infantis, casamentos e eventos especiais em Curitiba e região. Orçamento sem compromisso!">
   <meta property="og:image" content="https://bellaartefestas.com.br/images/logo-social.jpg">
-  <!-- Imagem otimizada (1200x630px) -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://bellaartefestas.com.br">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Bella Arte Festas"> <!-- Nome do site -->
-  <meta property="og:locale" content="pt_BR"> <!-- Idioma Português Brasil -->
+  <meta property="og:site_name" content="Bella Arte Festas">
+  <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bella Arte - Decoração de Festas em Curitiba">
   <meta name="twitter:description" content="Transforme seu evento com a melhor decoração de Curitiba e região!">
   <meta name="twitter:image" content="https://bellaartefestas.com.br/images/logo-social.jpg">
-  <meta name="twitter:site" content="@bellaartefestas"> <!-- @seuTwitter (opcional) -->
+  <meta name="twitter:site" content="@bellaartefestas">
 
-  <!-- Ícones e Favicon (Melhorado) -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Ícones -->
   <link rel="icon" href="./images/logo.png" type="image/png">
-  <link rel="icon" href="/images/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/images/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"> <!-- Ícone para iOS -->
-  <link rel="manifest" href="/site.webmanifest"> <!-- Manifest para PWA (opcional) -->
+  <link rel="apple-touch-icon" href="./images/logo.png">
+  <link rel="shortcut icon" href="./images/logo.png" type="image/png">
 
-  <!-- Pré-carregamento de recursos críticos -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap"
-    as="style">
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
-
-  <!-- Google Fonts -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap">
-
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Estilos -->
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Pacifico&display=swap"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Google Analytics (Otimizado para evitar render-blocking) -->
+  <title>Bella Arte - Decoração de Festas em Curitiba</title>
+
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK6BLVBCHT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-BK6BLVBCHT');
+    gtag('config', 'G-BK6BLVBCHT', { 
+      transport_type: 'beacon',
+      anonymize_ip: true
+    });
   </script>
 
   <!-- Dentro do <head> -->
